@@ -107,52 +107,52 @@ export default class About extends React.Component {
         >
           <Col
             md="12"
-            className="h-100 m-0 p-0 pb-2 pl-2 pr-2 d-flex justify-content-center align-items-center"
+            className="h-200 m-0 p-0 pb-2 pl-2 pr-2 d-flex justify-content-center align-items-center"
           >
-            <div
-              className="rounded w-70 h-100 pl-5 pr-5 bg-dark text-light text-center"
-              style={{ border: "2px solid grey" }}
-            >
+          <div
+            className="rounded w-70 h-100 pl-5 pr-5 bg-dark text-light text-center"
+            style={{ border: "2px solid grey", fontSize: "30px" }} // Adjusted font size to 24px
+          >
               <h1 className="h-25 d-flex justify-content-center align-items-center">
-                About
+                Welcome to the Crypto Traders Challenge!
               </h1>
-              <div className="h-75">
-                The aim of this web application is to deliver an authentic
-                cryptocurrency trading experience. We strive to enable our users
-                to engage in a{" "}
-                <b className="text-primary">
-                  realistic and risk free trading environment
-                </b>{" "}
-                which is synced to the latest exchange rates.
+              <br></br>
+              <b className="text-primary">About us</b>
                 <br></br>
                 <br></br>
-                Please note that this is a{" "}
-                <b className="text-primary">prototype</b>, which means certain
-                processes are yet to be optimised. Nevertheless, we are proud to
-                present a{" "}
-                <b className="text-primary">
-                  fully functional papertrading experience
-                </b>{" "}
-                with more than 10 supported currencies - and more to come.
+              <div className="h-75" style={{ fontSize: "25px" }}>
+                In our blockchain SIG, we are dedicated to showcase the use of blockchain technology to create a demo crypto trading platform in a realistic and risk free trading environment!
+                this is one of the few initiatives designed to empower you guys to have interest in learning how to create and learn about decentralised applications like these!
                 <br></br>
                 <br></br>
-                How it works: Users will receive their initial start-off funds
-                of <b className="text-primary">10,000 dollars</b> right after
-                registration. From thereon you are free to invest in our
-                supported cryptocurrencies by selling or buying at your leisure.
-                Strategic decisions are supported by our individual trading
-                charts and exchange history. By practising with our simulation,
-                you are able to gain vital knowledge and try out your own
-                strategy first-hand, before even investing a cent of real money.
+                <b className="text-primary" style={{ fontSize: "30px" }}>How to win?</b>
                 <br></br>
                 <br></br>
-                If you face any difficulties with our web app, please do not
-                hesitate to contact our lead developers directly:
+                Trade according to the style of the market! Everyone will start with $10000 in coins, and you can buy/sell the stock to any amount you want! Be sure to cash out on time though!
                 <br></br>
                 <br></br>
-                <b className="text-primary">Silas Pohl</b>,{" "}
-                <b className="text-primary">Golo Mühr</b> and{" "}
-                <b className="text-primary">Pius Walter</b>
+                Top 3 Traders with the most points by the end of FMO will Win Starbucks Gift Cards! Trade smart, strategize wisely, and aim for the top!
+                <br></br>
+                <br></br>
+                <b className="text-primary" style={{ fontSize: "30px" }}>But that's just the beginning...</b>
+                <br></br>
+                <br></br>
+                The Crypto Traders Challenge is just one facet of what our SIG has to offer. Joining us opens doors to a plethora of experiences beyond trading:
+                <br></br>
+                <br></br>
+                Events: Engage in insightful discussions, network with industry professionals, and stay updated with the latest trends through our diverse range of events.
+                <br></br>
+                <br></br>
+                Hackathons: Sharpen your coding skills and work collaboratively to tackle real-world problems in our hackathons. Whether you're a seasoned developer or just starting, there's a place for you in our hackathon community.
+                <br></br>
+                <br></br>
+                Workshops: Dive deep into emerging technologies like <b className="text-primary">NFTs</b> and explore the potential of Web3 applications through our hands-on workshops. Gain practical skills that are in high demand in today's digital landscape.  
+                <br></br>
+                <br></br>
+                If you ever need help with instructions, do find us at the Analytics Section in level 3 near the FYP lab!
+                <br></br>
+                <br></br>
+                <b className="text-primary" style={{ fontSize: "30px" }}>Join us today!</b>
               </div>
             </div>
           </Col>
