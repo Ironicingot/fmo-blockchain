@@ -269,27 +269,29 @@ export default class Dashboard extends React.Component {
 
     return (
       <Container fluid>
-        <Navbar className="z-100" id="navbar">
+        <Navbar bg="dark" variant="dark" expand="lg">
           <Navbar.Brand href="./">
             <img src={Logo} alt="PaperCoin" />
           </Navbar.Brand>
-          <Nav className="mr-auto w-100">
-            <Button href="./dashboard" className="w-15 ml-4">
-              Dashboard
-            </Button>
-            <Button href="./about" className="w-15 ml-4">
-              About
-            </Button>
-          </Nav>
-          <Navbar.Text className="w-20 text-light mr-2">
-            Your Balance:
+          <Navbar.Text className="text-light mr-2">
+            Your Balance: ${currentUSD}
           </Navbar.Text>
-          <Navbar.Text className="text-light mr-4 ml-n4">
-            ${currentUSD}
-          </Navbar.Text>
-          <Button className="w-15" onClick={this.handleLogout}>
-            Logout
-          </Button>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mr-auto">
+              <Button href="./dashboard" className="btn btn-outline-light ml-4">
+                Dashboard
+              </Button>
+              <Button href="./about" className="btn btn-outline-light ml-4">
+                About
+              </Button>
+            </Nav>
+            <Nav className="ml-auto">
+              <Button className="btn btn-outline-light ml-4" onClick={this.handleLogout}>
+                Logout
+              </Button>
+            </Nav>
+          </Navbar.Collapse>
         </Navbar>
 
         <Row
@@ -300,7 +302,7 @@ export default class Dashboard extends React.Component {
             padding: "0",
           }}
         >
-          <Col md="8" className="h-100 m-0 p-0 pb-2 pl-2">
+          <Col md="8" className=" m-0 p-0 pb-2 pl-2">
             <div
               className="rounded w-100 h-120 bg-dark"
               style={{ border: "2px solid grey" }}
@@ -308,31 +310,7 @@ export default class Dashboard extends React.Component {
               <h3 className="text-center mt-3 mb-2 pb-0 rankingTitle" style={{paddingBottom:"10% !important"}}>
                 Ranking of Top 3 Users
               </h3>
-              {/* <PieChart
-                className="h-90 mt-0 pt-0"
-                style={{ fontSize: "5px" }}
-                data={portfolio}
-                label={({ dataEntry }) => dataEntry.key}
-                labelStyle={(index) => ({
-                  fill: portfolio[index].color,
-                  fontSize: "5px",
-                  visibility: this.state.visibility[index],
-                })}
-                radius={42}
-                labelPosition={112}
-                onMouseOver={(_, index) => {
-                  console.log(index);
-                  // eslint-disable-next-line
-                  this.state.visibility[index] = "visible";
-                  this.forceUpdate();
-                }}
-                onMouseOut={(_, index) => {
-                  console.log(index);
-                  // eslint-disable-next-line
-                  this.state.visibility[index] = "hidden";
-                  this.forceUpdate();
-                }}
-              /> */}
+              
               <Ranking className="Ranking" />
             </div>
           </Col>
@@ -361,11 +339,11 @@ export default class Dashboard extends React.Component {
                         className="w-10 h-100"
                       ></img>
                     </div>
-                    <div className="h5 w-10 d-inline">
+                    <div className="h5 w-10 d-inline coinTitle">
                       {" "}
                       Bitcoin <span className="text-secondary">BTC</span>
                     </div>
-                    <div className="h5 d-inline float-right">
+                    <div className="h5 d-inline float-right coinPrice">
                       ${prices.get("bitcoin")}
                     </div>
                   </ListGroup.Item>
@@ -382,11 +360,11 @@ export default class Dashboard extends React.Component {
                         className="w-10 h-100"
                       ></img>
                     </div>
-                    <div className="h5 w-10 d-inline">
+                    <div className="h5 w-10 d-inline coinTitle">
                       {" "}
                       Ethereum <span className="text-secondary">ETH</span>
                     </div>
-                    <div className="h5 d-inline float-right">
+                    <div className="h5 d-inline float-right coinPrice">
                       ${prices.get("ethereum")}
                     </div>
                   </ListGroup.Item>
@@ -403,11 +381,11 @@ export default class Dashboard extends React.Component {
                         className="w-10 h-100"
                       ></img>
                     </div>
-                    <div className="h5 w-10 d-inline">
+                    <div className="h5 w-10 d-inline coinTitle">
                       {" "}
                       Tether <span className="text-secondary">USDT</span>
                     </div>
-                    <div className="h5 d-inline float-right">
+                    <div className="h5 d-inline float-right coinPrice">
                       ${prices.get("tether")}
                     </div>
                   </ListGroup.Item>
@@ -424,11 +402,11 @@ export default class Dashboard extends React.Component {
                         className="w-10 h-100"
                       ></img>
                     </div>
-                    <div className="h5 w-10 d-inline">
+                    <div className="h5 w-10 d-inline coinTitle">
                       {" "}
-                      XRP <span className="text-secondary">XRP</span>
+                      XRP <span className="text-secondary ">XRP</span>
                     </div>
-                    <div className="h5 d-inline float-right">
+                    <div className="h5 d-inline float-right coinPrice">
                       ${prices.get("xrp")}
                     </div>
                   </ListGroup.Item>
@@ -445,11 +423,11 @@ export default class Dashboard extends React.Component {
                         className="w-10 h-100"
                       ></img>
                     </div>
-                    <div className="h5 w-10 d-inline">
+                    <div className="h5 w-10 d-inline coinTitle">
                       {" "}
                       Bitcoin Cash <span className="text-secondary">BCH</span>
                     </div>
-                    <div className="h5 d-inline float-right">
+                    <div className="h5 d-inline float-right coinPrice">
                       ${prices.get("bitcoinCash")}
                     </div>
                   </ListGroup.Item>
@@ -466,11 +444,11 @@ export default class Dashboard extends React.Component {
                         className="w-10 h-100"
                       ></img>
                     </div>
-                    <div className="h5 w-10 d-inline">
+                    <div className="h5 w-10 d-inline coinTitle">
                       {" "}
                       Bitcoin SV <span className="text-secondary">BSV</span>
                     </div>
-                    <div className="h5 d-inline float-right">
+                    <div className="h5 d-inline float-right coinPrice">
                       ${prices.get("bitcoinSV")}
                     </div>
                   </ListGroup.Item>
@@ -487,11 +465,11 @@ export default class Dashboard extends React.Component {
                         className="w-10 h-100"
                       ></img>
                     </div>
-                    <div className="h5 w-10 d-inline">
+                    <div className="h5 w-10 d-inline coinTitle">
                       {" "}
                       Litecoin <span className="text-secondary">LTC</span>
                     </div>
-                    <div className="h5 d-inline float-right">
+                    <div className="h5 d-inline float-right coinPrice">
                       ${prices.get("litecoin")}
                     </div>
                   </ListGroup.Item>
@@ -508,11 +486,11 @@ export default class Dashboard extends React.Component {
                         className="w-10 h-100"
                       ></img>
                     </div>
-                    <div className="h5 w-10 d-inline">
+                    <div className="h5 w-10 d-inline coinTitle">
                       {" "}
                       Binance Coin <span className="text-secondary">BNB</span>
                     </div>
-                    <div className="h5 d-inline float-right">
+                    <div className="h5 d-inline float-right coinPrice">
                       ${prices.get("binancecoin")}
                     </div>
                   </ListGroup.Item>
@@ -529,11 +507,11 @@ export default class Dashboard extends React.Component {
                         className="w-10 h-100"
                       ></img>
                     </div>
-                    <div className="h5 w-10 d-inline">
+                    <div className="h5 w-10 d-inline coinTitle">
                       {" "}
                       EOS <span className="text-secondary">EOS</span>
                     </div>
-                    <div className="h5 d-inline float-right">
+                    <div className="h5 d-inline float-right coinPrice">
                       ${prices.get("eos")}
                     </div>
                   </ListGroup.Item>
@@ -550,11 +528,11 @@ export default class Dashboard extends React.Component {
                         className="w-10 h-100"
                       ></img>
                     </div>
-                    <div className="h5 w-10 d-inline">
+                    <div className="h5 w-10 d-inline coinTitle">
                       {" "}
                       Tezos <span className="text-secondary">XTZ</span>
                     </div>
-                    <div className="h5 d-inline float-right">
+                    <div className="h5 d-inline float-right coinPrice">
                       ${prices.get("tezos")}
                     </div>
                   </ListGroup.Item>

@@ -5,3 +5,25 @@
 .Ranking{
     height:400px !important
 }
+@media (max-width: 1128px) {
+  .RankingInfo {
+    flex-direction: column;
+  }
+}
+
+@media (max-width:454px){
+  .text-secondary, .coinTitle{
+    font-size: 14px;
+  }
+  .coinPrice{
+    font-size:14px;
+  }
+}
+@media (max-width:343px){
+  .text-secondary, .coinTitle{
+    font-size: 10px;
+  }
+  .coinPrice{
+    font-size:10px;
+  }
+}

@@ -19,6 +19,8 @@ import {
   EOS_logo,
   XTZ_logo,
 } from "../../img";
+import "../../styles/dashboard.css"
+
 function Ranking() {
   const [topThree, settopThree] = useState([])
   const [topThreeBalance, settopThreeBalance] = useState([])
@@ -186,7 +188,7 @@ function Ranking() {
         />
       </Card>
       <br></br>
-      <div style={{display:"flex",width:"90%",margin:"auto"}}>
+      <div className="RankingInfo"style={{display:"flex",width:"90%",margin:"auto"}}>
       {topThree.map((top, i) => (
         <Card
           style={{ width: "94%", margin: "auto", backgroundColor: "#061125",margin:"1%" }}
