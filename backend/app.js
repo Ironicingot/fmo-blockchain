@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const db = require("./app/mongodb-models");
 
 db.mongoose
-    .connect(`mongodb://127.0.0.1:27017/${dbConfig.DB}`, {
+    .connect(`mongodb+srv://tjunliang1214:kenzie08@cluster0.qqzunfj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
