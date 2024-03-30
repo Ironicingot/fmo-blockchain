@@ -25,7 +25,8 @@ import {
   EOS_logo,
   XTZ_logo,
 } from "../img";
-
+import "../styles/dashboard.css";
+import Ranking from "./ranking/ranking";
 // component Dashboard
 export default class Dashboard extends React.Component {
   /**
@@ -83,6 +84,8 @@ export default class Dashboard extends React.Component {
   /**
    * gets the from backend
    */
+  
+
   getUserValue() {
     UserService.getUserValue(this.state.currentUser.username).then(
       (response) => {
@@ -299,13 +302,13 @@ export default class Dashboard extends React.Component {
         >
           <Col md="8" className="h-100 m-0 p-0 pb-2 pl-2">
             <div
-              className="rounded w-100 h-100 bg-dark"
+              className="rounded w-100 h-120 bg-dark"
               style={{ border: "2px solid grey" }}
             >
-              <h3 className="text-center mt-3 mb-2 pb-0">
-                Total Value: ${userValue}
+              <h3 className="text-center mt-3 mb-2 pb-0 rankingTitle" style={{paddingBottom:"10% !important"}}>
+                Ranking of Top 3 Users
               </h3>
-              <PieChart
+              {/* <PieChart
                 className="h-90 mt-0 pt-0"
                 style={{ fontSize: "5px" }}
                 data={portfolio}
@@ -329,7 +332,8 @@ export default class Dashboard extends React.Component {
                   this.state.visibility[index] = "hidden";
                   this.forceUpdate();
                 }}
-              />
+              /> */}
+              <Ranking className="Ranking" />
             </div>
           </Col>
           <Col md="4" className="h-100 m-0 p-0 pb-2 pl-2">

@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const db = require("./app/mongodb-models");
 
 db.mongoose
-    .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
+    .connect(`mongodb://127.0.0.1:27017/${dbConfig.DB}`, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
@@ -69,7 +69,7 @@ app.post("/auth/login", controller.login);
 // user endpoints with verifyToken and verifyBalance/coins middlewares
 
 app.post("/user/balance", [authJwt.verifyToken], user_controller.getUserBalance);
-
+app.get("/user/allBalance",user_controller.getAllUsersBalances)
 app.post("/user/buy", [authJwt.verifyToken, user_controller.verifyBalance], user_controller.buy);
 
 app.post("/user/sell", [authJwt.verifyToken, user_controller.verifyCoins], user_controller.sell);
@@ -105,5 +105,7 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error');
 });
+
+
 
 module.exports = app;

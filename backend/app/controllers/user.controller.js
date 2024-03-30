@@ -60,6 +60,37 @@ exports.getUserBalance = (req, res) => {
             });
         });
 };
+exports.getAllUsersBalances = (req, res) => {
+    User.find({}, (err, users) => {
+        if (err) {
+            return res.status(500).send({ message: err });
+        }
+
+        if (!users || users.length === 0) {
+            return res.status(404).send({ message: "No users found." });
+        }
+
+        // Map over all users and extract necessary details
+        const usersDetails = users.map(user => ({
+            username: user.username,
+            balance: user.balance,
+            bitcoin: user.bitcoin,
+            dash: user.dash,
+            monero: user.monero,
+            ethereum: user.ethereum,
+            xrp: user.xrp,
+            tether: user.tether,
+            bitcoinCash: user.bitcoinCash,
+            bitcoinSV: user.bitcoinSV,
+            litecoin: user.litecoin,
+            eos: user.eos,
+            binancecoin: user.binancecoin,
+            tezos: user.tezos
+        }));
+
+        return res.status(200).send(usersDetails);
+    });
+};
 
 // Verifies if user has sufficient balance
 exports.verifyBalance = (req, res, next) => {

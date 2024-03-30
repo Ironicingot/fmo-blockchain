@@ -74,6 +74,20 @@ class UserService {
         return response.data;
       });
   }
+  getAllUsersBalances() {
+    return axios
+      .get(API_URL + "allBalance")
+      .then((response) => {
+        if (response.data.accessToken) {
+          localStorage.setItem("userworth", JSON.stringify(response.data.uservalue));
+        }
+        return response.data;
+      })
+      .catch((error) => {
+        console.error('Failed to fetch user balances:', error);
+        throw error; // Re-throw the error so that the caller can handle it
+      });
+  }
   buy(username, coin, value) {
     return axios
       .post(
